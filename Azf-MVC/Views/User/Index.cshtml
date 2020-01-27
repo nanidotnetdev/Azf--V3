@@ -1,0 +1,31 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Add User";
+}
+
+    <body class="container">
+        @using (Html.BeginForm("CreateUser", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary()
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.LabelFor(m => m.UserName)
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.UserName)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.LabelFor(m => m.Description)
+                </div>
+                <div class="col-md-6">
+                    @Html.TextAreaFor(m => m.Description)
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Add User" class="btn-primary float-right"/>
+            </div>
+        }
+    </body>
+
